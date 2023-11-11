@@ -1,30 +1,20 @@
 #include <stdio.h>
-// oC=(5/9)(oF-32)
-
-// in out
-//  1 17
-//  20 -6
-//  40 4
-//  60 15
-//  80 26
-//  100 37
-
-main() {
-  int fahr, celsius;
-  int lower, upper, step;
-
-  lower = 0;
-  upper = 100;
-  step = 20;
-
-  fahr = lower;
-  while(fahr <= upper)
-  {
-    celsius = 5 * (fahr-32) / 9;
-    printf("%d\t%d\n", fahr, celsius);
-    fahr = fahr + step;
-  }
-
-}
-
-
+ /* print Fahrenheit-Celsius table
+ for fahr = 0, 20, ..., 300; floating-point version */
+ main()
+ {
+ float fahr, celsius;
+ float lower, upper, step;
+ lower = 0; /* lower limit of temperatuire scale */
+ upper = 300; /* upper limit */
+ step = 20; /* step size */
+ fahr = lower;
+ printf("-------------------------------------------------------\n");
+ printf("Centegrade  Celcius\n");
+ printf("--------------------------------------------------------\n");
+ while (fahr <= upper) {
+ celsius = (5.0/9.0) * (fahr-32.0);
+ printf("%3.0f         %6.1f\n", fahr, celsius);
+ fahr = fahr + step;
+ }
+ }
